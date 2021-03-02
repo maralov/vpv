@@ -1,0 +1,20 @@
+$primary: #67B23C;
+$secondary: #67B23C;
+$transparent: rgba(0, 0, 0, 0);
+$dark: #000000;
+$shadow-color: rgba(0, 21, 41, 0.12);
+
+$main-text-color: $dark;
+$border-color: #F0F0F0;
+$border-color-dark: #DADADB;
+$body-bg: #F6F6FA;
+$footer-bg: #1C1C30;
+$mute: rgba(0, 0, 0, 0.36);
+$theme-colors: ("primary": $primary,
+  "secondary": $secondary,
+  // "success": $success,
+  // "info": $info,
+  // "warning": $warning,
+  // "danger": $danger,
+  // "light": $light,
+  "dark": $dark);

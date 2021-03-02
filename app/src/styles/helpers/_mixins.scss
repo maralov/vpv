@@ -1,0 +1,46 @@
+
+@mixin slick-flex {
+  .slick-track {
+    display: flex !important; //slick
+  }
+
+  .slick-slide {
+    outline: transparent;
+    height: inherit !important;
+
+    &>div {
+      height: 100%;
+      position: relative;
+    }
+  }
+}
+
+@mixin center-absolute {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+
+@mixin input-reset ($color) {
+  input:-webkit-autofill {
+    box-shadow: inset 0 0 0 100px $color !important;
+    /* Цвет фона автозаполнение для хрома и файрфокс*/
+  }
+
+  input:invalid {
+    box-shadow: none;
+    /* стандартная валидация файрфокс*/
+  }
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: transparent;
+  white-space: normal;
+}

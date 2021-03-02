@@ -1,0 +1,25 @@
+.fw-medium {
+  font-weight: 500;
+}
+
+.txt-muted {
+  color: $mute;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.h-2 {
+  color: $dark;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.h-3 {
+  color: $dark;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}

@@ -1,0 +1,38 @@
+.page-nav {
+
+  &-item {
+    display: inline-block;
+
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    &.is-current {
+
+      .page-nav-link {
+        border-color: $primary;
+        color: $dark;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &-link {
+    color: $mute;
+    font-weight: 40;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 16px;
+    border-bottom: 2px solid $transparent;
+    line-height: 1;
+
+    &:hover {
+      border-color: $primary;
+      color: $dark;
+    }
+  }
+
+  //.page-nav-link
+}

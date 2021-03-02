@@ -1,0 +1,51 @@
+.main-header {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  box-shadow: 0px 2px 6px $shadow-color;
+  width: 100%;
+
+
+}
+
+.fixed-header {
+  padding-top: 100px;
+
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+}
+
+.navbar-nav {
+  li {
+    border-bottom: 2px solid $transparent;
+    margin-right: 50px;
+
+    &:hover {
+      border-color: $primary;
+
+    }
+
+    a {
+      color: $dark;
+      font: 16px;
+      font-weight: 400;
+      text-decoration: none;
+      display: inline-block;
+      padding: 4px 0;
+    }
+
+    &.current-menu-item,
+    &.current_page_item {
+      border-color: $primary;
+
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.sort-block {
+  display: inline-flex;
+  // .sort-block__item
+
+  &__item {
+    color: $mute;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  // .sort-block__action
+
+  &__action {
+    cursor: pointer;
+
+    &:hover {
+      color: $dark;
+    }
+  }
+}

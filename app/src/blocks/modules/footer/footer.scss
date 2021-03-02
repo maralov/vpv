@@ -1,0 +1,157 @@
+.footer {
+
+  &-content {
+    padding: 60px 0 32px;
+    color: $white;
+    background-color: $footer-bg;
+
+    &-copy {
+      opacity: 0.55;
+      font-size: 14px;
+    }
+
+    //.footer-content-copy
+  }
+
+  //.footer-content
+
+  &__header {
+    border-top: 2px solid $border-color-dark;
+    padding: 77px 0 90px;
+  }
+
+  &-partners {
+
+    &__item {
+
+      &:nth-last-child(n+2) {
+        margin-bottom: 20px;
+      }
+    }
+
+    //footer-partners__item
+  }
+
+  //.footer-partners
+
+  &-contacs {
+
+    &__item {
+      padding-left: 32px;
+      position: relative;
+
+      a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &--address {
+        &:before {
+          background-image: url('../img/icons/uil_map-marker.min.svg');
+        }
+      }
+
+      &--tel {
+        &:before {
+          background-image: url('../img/icons/uil_outgoing-call.min.svg');
+        }
+      }
+    }
+  }
+
+  //.footer-contacs
+
+  &-social {
+    display: flex;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 38px;
+      height: 38px;
+
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+
+      &:hover {
+
+        img {
+          filter: none;
+        }
+      }
+    }
+  }
+
+  //.footer-social
+
+  &-nav {
+    color: $mute;
+    @include row-flex();
+
+    a {
+      color: $mute;
+      text-decoration: none;
+
+      &:hover {
+        color: $dark;
+      }
+    }
+
+    &>.menu-item {
+      @include col();
+
+      @include size-md(3);
+
+      &>a {
+        color: $dark;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+
+    }
+
+    .sub-menu {
+      &>.menu-item {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+//.footer-nav
+
+//.footer

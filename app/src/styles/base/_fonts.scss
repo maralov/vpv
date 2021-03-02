@@ -1,0 +1,15 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../../assets/fonts/#{$file_name}.woff") format("woff"),
+		url("../../assets/fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@include font('Ukraine', 'e-Ukraine-Light', 100, normal);
+@include font('Ukraine', 'e-Ukraine-Regular', 400, normal);
+@include font('Ukraine', 'e-Ukraine-Medium', 500, normal);
+@include font('Ukraine', 'e-Ukraine-Bold', 700, normal);

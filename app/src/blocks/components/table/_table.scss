@@ -1,0 +1,42 @@
+@import "../../../../node_modules/bootstrap/scss/tables";
+
+.table {
+  &>thead {
+    &>tr {
+      &>th {
+        background-color: #F7F9FB;
+        font-weight: 500;
+        padding: 16px;
+      }
+    }
+  }
+
+  &>tbody {
+
+    td {
+      padding: 16px;
+      font-weight: 100;
+      font-size: 15px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.table-striped-rows {
+  &>tbody {
+
+    &>tr:nth-child(even) {
+      &>td {
+        background-color: #F7F9FB;
+      }
+    }
+  }
+}
+
+.table-border-rows {
+  &>tbody {
+    tr {
+      border-bottom: $border;
+    }
+  }
+}

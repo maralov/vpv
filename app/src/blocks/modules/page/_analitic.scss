@@ -1,0 +1,19 @@
+.report-content {
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.total-value {
+
+  &-count {
+    color: $primary;
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  //.total-value-count
+}

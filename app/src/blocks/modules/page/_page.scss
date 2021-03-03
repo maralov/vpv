@@ -16,7 +16,7 @@ $content-gap-y: 32px;
   //.page-title
 
   &-content {
-    padding: $content-gap-x $content-gap-y;
+    padding: $content-gap-x $content-gap-y $content-gap-y * 2;
     background-color: $white;
     border-radius: 6px;
     border: $border;

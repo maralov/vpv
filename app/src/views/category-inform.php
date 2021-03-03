@@ -11,6 +11,8 @@ if ($cat_id === $info_cat_ID) {
   $cat_id = $news_cat_ID;
 }
 
+$is_faq_cat = $cat_id === 12 || $queried_object->slug === "faq";
+
 $info_sub_cats = get_categories(array(
   'child_of' => $info_cat_ID,
   'hide_empty' => false
@@ -28,7 +30,6 @@ get_header(); ?>
       ?>
 
       <h1 class="page-title page__title"><?php echo get_cat_name($info_cat_ID); ?></h1>
-
       <div class="mb-5 d-flex justify-content-between align-items-center">
 
         <ul class="page-nav " role="navigation">
@@ -58,10 +59,12 @@ get_header(); ?>
             <?php endforeach; ?>
           <?php endif; ?>
         </ul>
-
-        <div class="page-search">
-          <input class="page-search__input" type="text" name="" id="" placeholder="Пошук">
-        </div>
+        <?php
+        if (!$is_faq_cat) :
+        ?>
+          <div class="page-search">
+            <input class="page-search__input" type="text" name="" id="" placeholder="Пошук">
+          </div>
 
       </div>
 
@@ -69,7 +72,7 @@ get_header(); ?>
 
         <div class="page-content__header d-flex justify-content-between align-items-center">
 
-          <h2 class="h-3"><?php echo get_cat_name($cat_id); ?></h2>
+          <h2 class="h-2"><?php echo get_cat_name($cat_id); ?></h2>
 
           <div class="sort-block">
             <div class="sort-block__item">Сортувати за:</div>
@@ -119,6 +122,7 @@ get_header(); ?>
                       <?php if (!empty(get_the_tags())) : ?>
                         <div class="me-4 txt-muted tags"><?php the_tags(''); ?></div>
                       <?php endif; ?>
+
                       <?php the_date('d.m.Y'); ?>
                     </div>
                   </div>
@@ -135,8 +139,13 @@ get_header(); ?>
         </div>
 
       </section>
+    <?php else :
 
-      <!-- page-content -->
+          get_template_part('template-part/faq');
+
+        endif ?>
+
+    <!-- page-content -->
     </div>
   </div>
 

@@ -18,86 +18,44 @@ $cat_id = $queried_object->term_id;
   </div>
   <!-- ./page-content__header -->
 
-  <div class="row faq-content__row">
+  <?php if (have_rows('faq_block', 'option')) :
+    while (have_rows('faq_block', 'option')) : the_row();
+  ?>
 
-    <div class="col-md-4">
-      <div class="h-3 txt-muted faq-cat-title">Як працює Vse pro vidhody</div>
-    </div>
+      <div class="row faq-content__row">
 
-    <div class="col-md-8">
-      <div class="row faq-items">
-        <div class="col-12 faq-items__col">
-          <div class="faq-block">
-            <div class="faq-block__header ">
-              Що таке Vse pro vidhody?
-            </div>
-
-            <div class="faq-block__body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, senectus aliquam id sit hendrerit blandit. Amet habitant at commodo amet vitae id ut purus. Id sapien dignissim accumsan cras. Placerat vestibulum, tellus auctor sed quis in dolor turpis. Id velit varius tempor dui massa. Id orci odio suscipit quis nunc amet amet. Elementum aliquam egestas proin nisl, eget auctor fames.
-
-              Maecenas vivamus risus et fames eleifend at. Porta fames gravida massa eget viverra dignissim diam quis. Lorem volutpat enim enim tristique malesuada lacinia blandit urna. Rhoncus adipiscing eget vulputate porttitor at purus.
-            </div>
-          </div>
+        <div class="col-md-4">
+          <div class="h-3 txt-muted faq-cat-title"><?php the_sub_field('faq_block_name'); ?></div>
         </div>
-        <div class="col-12 faq-items__col">
-          <div class="faq-block">
-            <div class="faq-block__header ">
-              Що таке Vse pro vidhody?
-            </div>
+        <div class="col-md-8">
+          <div class="row faq-items">
 
-            <div class="faq-block__body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, senectus aliquam id sit hendrerit blandit. Amet habitant at commodo amet vitae id ut purus. Id sapien dignissim accumsan cras. Placerat vestibulum, tellus auctor sed quis in dolor turpis. Id velit varius tempor dui massa. Id orci odio suscipit quis nunc amet amet. Elementum aliquam egestas proin nisl, eget auctor fames.
+            <?php if (have_rows('faq_block_item', 'option')) :
+              while (have_rows('faq_block_item', 'option')) : the_row();
+            ?>
+                <div class="col-12 faq-items__col">
+                  <div class="faq-block">
+                    <div class="faq-block__header ">
+                      <?php the_sub_field('question'); ?>
+                    </div>
 
-              Maecenas vivamus risus et fames eleifend at. Porta fames gravida massa eget viverra dignissim diam quis. Lorem volutpat enim enim tristique malesuada lacinia blandit urna. Rhoncus adipiscing eget vulputate porttitor at purus.
-            </div>
+                    <div class="faq-block__body">
+                      <?php the_sub_field('answer'); ?>
+                    </div>
+                  </div>
+                </div>
+              <?php endwhile; ?>
+            <?php endif; ?>
+
           </div>
+
         </div>
+
       </div>
-
-    </div>
-
-  </div>
+    <?php endwhile; ?>
+  <?php endif; ?>
   <!-- ./faq-content__row -->
-  <div class="row faq-content__row">
 
-    <div class="col-md-4">
-      <div class="h-3 txt-muted faq-cat-title">Як працює Vse pro vidhody</div>
-    </div>
-
-    <div class="col-md-8">
-      <div class="row faq-items">
-        <div class="col-12 faq-items__col">
-          <div class="faq-block">
-            <div class="faq-block__header ">
-              Що таке Vse pro vidhody?
-            </div>
-
-            <div class="faq-block__body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, senectus aliquam id sit hendrerit blandit. Amet habitant at commodo amet vitae id ut purus. Id sapien dignissim accumsan cras. Placerat vestibulum, tellus auctor sed quis in dolor turpis. Id velit varius tempor dui massa. Id orci odio suscipit quis nunc amet amet. Elementum aliquam egestas proin nisl, eget auctor fames.
-
-              Maecenas vivamus risus et fames eleifend at. Porta fames gravida massa eget viverra dignissim diam quis. Lorem volutpat enim enim tristique malesuada lacinia blandit urna. Rhoncus adipiscing eget vulputate porttitor at purus.
-            </div>
-          </div>
-        </div>
-        <div class="col-12 faq-items__col">
-          <div class="faq-block">
-            <div class="faq-block__header ">
-              Що таке Vse pro vidhody?
-            </div>
-
-            <div class="faq-block__body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, senectus aliquam id sit hendrerit blandit. Amet habitant at commodo amet vitae id ut purus. Id sapien dignissim accumsan cras. Placerat vestibulum, tellus auctor sed quis in dolor turpis. Id velit varius tempor dui massa. Id orci odio suscipit quis nunc amet amet. Elementum aliquam egestas proin nisl, eget auctor fames.
-
-              Maecenas vivamus risus et fames eleifend at. Porta fames gravida massa eget viverra dignissim diam quis. Lorem volutpat enim enim tristique malesuada lacinia blandit urna. Rhoncus adipiscing eget vulputate porttitor at purus.
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-  <!-- ./faq-content__row -->
 
 </section>
 

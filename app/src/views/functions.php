@@ -96,6 +96,20 @@ if (function_exists('acf_add_options_page')) {
 	));
 }
 
+if (function_exists('acf_add_options_page')) {
+	// Adds ACF Pro options page for Global Options
+	$globalOptions = acf_add_options_page(array(
+		'page_title'  => 'Часті питання',
+		'menu_title' => 'Часті питання',
+		'menu_slug'  => 'faq-options',
+		'capability' => 'edit_posts',
+		'redirect'  => false,
+		'icon_url' => 'dashicons-info-outline', // Add this line and replace the second inverted commas with class of the icon you like
+		'position' => 3
+	));
+	// Adds ACF Pro sub options page for Header
+}
+
 /*
 	*  Отключаем wp-json
 	*
@@ -247,7 +261,6 @@ function wpds_parent_category_template()
 	}
 }
 
-
 function kama_excerpt($args = '')
 {
 	global $post;
@@ -309,8 +322,6 @@ function kama_excerpt($args = '')
 
 	return ($rg->autop && $text) ? "<p>$text</p>" : $text;
 }
-
-
 
 function facebook_open_graph()
 {

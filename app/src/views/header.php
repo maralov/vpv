@@ -6,10 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?php echo wp_get_document_title(); ?></title>
 	<meta name="description" content="<?php bloginfo("description"); ?>">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="<?php echo get_home_url(); ?>/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="<?php echo get_home_url(); ?>/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo THEME_ROOT ?>/assets/img/favicons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo THEME_ROOT ?>/assets/img/favicons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo THEME_ROOT ?>/assets/img/favicons/favicon-16x16.png">
 	<?php wp_head(); ?>
 
 </head>

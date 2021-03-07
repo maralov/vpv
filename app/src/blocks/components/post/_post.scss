@@ -56,6 +56,24 @@
     }
   }
 
+  .wp-block-embed {
+
+    &__wrapper {
+      overflow: hidden;
+      height: 0;
+      padding-top: 56.25%;
+      position: relative;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
   &-share {
 
     &-item {

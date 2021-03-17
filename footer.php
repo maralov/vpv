@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3  mb-4 mb-sm-0 order-1 order-lg-0">
+                <div class="col-12 col-sm-6 col-lg-3  mb-4 mb-sm-0">
 
                     <div class="row footer-partners">
                         <div class="col-12 mb-3">
@@ -97,9 +97,9 @@
 
             </div>
 
-            <div class="row">
+            <div class="row ">
                 <div class="col-12">
-                    <p class="footer-content-copy">&copy; <?php echo date("Y"); ?> <?php echo wp_get_document_title(); ?></p>
+                    <p class="footer-content-copy pt-4 ">&copy; <?php echo date("Y"); ?> <?php echo wp_get_document_title(); ?></p>
                 </div>
             </div>
         </div>

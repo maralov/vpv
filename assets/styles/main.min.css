@@ -7273,12 +7273,6 @@ fieldset:disabled .btn {
   }
 }
 
-@media screen and (max-width: 1025px) {
-  .footer-nav > .menu-item {
-    width: calc(100% - 1.875rem);
-  }
-}
-
 @media (max-width: 1024.98px) {
   .table-responsive-lg {
     overflow-x: auto;
@@ -7317,6 +7311,14 @@ fieldset:disabled .btn {
 }
 
 @media (max-width: 799.98px) {
+  .footer-contacs__item {
+    opacity: 0.55;
+  }
+
+  .footer-social-item {
+    opacity: 0.55;
+  }
+
   .btn:focus {
     outline: none;
     box-shadow: none;
@@ -7355,14 +7357,45 @@ fieldset:disabled .btn {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .footer-nav > .menu-item {
+    width: calc(100% - 1.875rem);
+  }
+}
+
 @media screen and (max-width: 576px) {
+  .footer-content-copy {
+    border-top: 1px solid #F0F0F0;
+  }
+
   .footer__header {
-    padding: 0 0 40px;
-    border-top: none;
+    padding: 40px 0;
   }
 
   .footer-nav > .menu-item:not(:last-child) {
     margin-bottom: 16px;
+  }
+
+  .footer-nav > .menu-item:not(:first-child) .sub-menu {
+    display: none;
+  }
+
+  .footer-nav > .menu-item > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-nav > .menu-item > a.is-active:after {
+    transform: rotate(180deg);
+  }
+
+  .footer-nav > .menu-item > a:after {
+    content: '';
+    display: block;
+    width: 11px;
+    height: 7px;
+    background: url("../img/icons/ic-arrow-collapse.svg") no-repeat center/contain;
   }
 
   .footer-nav .sub-menu > .menu-item:last-child {

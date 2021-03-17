@@ -43,7 +43,7 @@
 					</div>
 					<div class="navbar-action py-2 d-flex d-md-block">
 						<a class="btn btn-primary btn-header-mob btn-header-mob--sigin order-1 order-md-0" href="#" aria-label="Увійти у персональний кабінет">Увійти</a>
-						<button class="btn btn-primary btn-header-mob btn-header-mob--toggle ms-md-3 me-3 me-md-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<button class="btn btn-primary btn-header-mob btn-header-mob--toggle ms-md-3 me-3 me-md-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="Toggle navigation" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 					</div>

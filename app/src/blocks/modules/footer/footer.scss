@@ -18,6 +18,12 @@
   &__header {
     border-top: 2px solid $border-color-dark;
     padding: 77px 0 90px;
+
+    @media screen and (max-width: 576px) {
+      padding: 0 0 40px;
+      border-top: none;
+
+    }
   }
 
   &-partners {
@@ -134,7 +140,14 @@
     &>.menu-item {
       @include col();
 
-      @include size-md(3);
+      @include size(3);
+      @include size-lg(12);
+
+      @include sm-block {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
 
       &>a {
         color: $dark;
@@ -147,6 +160,12 @@
     .sub-menu {
       &>.menu-item {
         margin-bottom: 16px;
+
+        @include sm-block {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
       }
     }
   }

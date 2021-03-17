@@ -60,7 +60,6 @@
     },
     "dependencies": {
         "bootstrap": "^5.0.0-beta2",
-        "fitvids": "^2.1.1",
         "gulp-webp-html": "^1.0.2",
         "jquery": "^3.5.1",
         "smart-grid": "^2.1.2"

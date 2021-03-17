@@ -376,3 +376,5 @@ function facebook_open_graph()
 	}
 }
 add_action('wp_head', 'facebook_open_graph');
+
+add_action('wp_head', 'kama_postviews');

@@ -4,14 +4,6 @@
  */
 $queried_object = get_queried_object();
 $cat_id = $queried_object->term_id;
-$info_cat_ID = 4;
-$news_cat_ID = 5;
-
-if ($cat_id === $info_cat_ID) {
-  $cat_id = $news_cat_ID;
-}
-
-$is_faq_cat = $cat_id === 12 || $queried_object->slug === "faq";
 
 $info_sub_cats = get_categories(array(
   'child_of' => $info_cat_ID,
@@ -29,57 +21,24 @@ get_header(); ?>
       }
       ?>
 
-      <h1 class="page-title page__title"><?php echo get_cat_name($info_cat_ID); ?></h1>
-      <div class="mb-3 mb-md-5 d-flex justify-content-between align-items-center flex-wrap flex-lg-nowrap">
+      <div class="mb-5 d-flex justify-content-between align-items-center">
+        <h1 class="page-title"><?php echo get_cat_name($cat_id); ?></h1>
 
-        <ul class="page-nav w-100 mt-4 mt-lg-0 order-1 order-lg-0" role="navigation">
-
-          <?php if ($info_sub_cats) : ?>
-
-            <?php foreach ($info_sub_cats as $cat) :
-
-              $category_link = get_category_link($cat->cat_ID);
-              $active_class = '';
-
-              if ($cat->cat_ID === $news_cat_ID) {
-                $category_link = get_category_link($info_cat_ID);
-              }
-
-              if ($cat->cat_ID === $cat_id) {
-                $active_class = 'is-current';
-              }
-
-            ?>
-
-              <li class="page-nav-item <?php echo $active_class ?>">
-                <a class="page-nav-link" href="<?php echo $category_link ?>">
-                  <?php echo $cat->name ?>
-                </a>
-              </li>
-            <?php endforeach; ?>
-          <?php endif; ?>
-        </ul>
-        <?php
-        if (!$is_faq_cat) :
-        ?>
-          <div class="page-search ms-auto ms-lg-0 mb-4 mb-sm-0">
-            <input class="page-search__input" type="text" name="" id="" placeholder="Пошук">
-          </div>
-
+        <div class="sort-block">
+          <div class="sort-block__item">Сортувати за:</div>
+          <div class="sort-block__item sort-block__action">Назвою (А-Я)</div>
+          <div class="sort-block__item sort-block__action">Нові</div>
+          <div class="sort-block__item sort-block__action">Популярні</div>
+        </div>
       </div>
 
       <section class="page-content">
 
-        <div class="page-content__header d-flex flex-wrap justify-content-between align-items-center">
+        <div class="page-content__header d-flex justify-content-between align-items-center">
 
-          <h2 class="h-2 mb-4 mb-md-0"><?php echo get_cat_name($cat_id); ?></h2>
+          <h2 class="h-2"><?php echo get_cat_name($cat_id); ?></h2>
 
-          <div class="sort-block">
-            <div class="sort-block__item">Сортувати за:</div>
-            <div class="sort-block__item sort-block__action">Назвою (А-Я)</div>
-            <div class="sort-block__item sort-block__action">Нові</div>
-            <div class="sort-block__item sort-block__action">Популярні</div>
-          </div>
+
 
         </div>
         <!-- ./page-content__header -->
@@ -120,13 +79,7 @@ get_header(); ?>
                     </a>
                     <div class="info-card__footer d-flex">
                       <?php if (!empty(get_the_tags())) : ?>
-                        <div class="me-4 txt-muted tags">
-                          <?php $posttags = get_the_tags();
-                          if ($posttags) {
-                            foreach ($posttags as $tag) {
-                              echo $tag->name . ' ';
-                            }
-                          } ?></div>
+                        <div class="me-4 txt-muted tags"><?php the_tags(''); ?></div>
                       <?php endif; ?>
 
                       <?php the_date('d.m.Y'); ?>
@@ -145,13 +98,8 @@ get_header(); ?>
         </div>
 
       </section>
-    <?php else :
 
-          get_template_part('template-part/faq');
-
-        endif ?>
-
-    <!-- page-content -->
+      <!-- page-content -->
     </div>
   </div>
 

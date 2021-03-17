@@ -1,12 +1,22 @@
 .page-nav {
+  @media screen and (max-width: 576px) {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
 
   &-item {
     display: inline-block;
+    flex-shrink: 0;
 
     cursor: pointer;
 
     &:not(:last-child) {
       margin-right: 40px;
+
+      @media screen and (max-width: 576px) {
+        margin-right: 20px;
+      }
     }
 
     &.is-current {
@@ -27,6 +37,10 @@
     padding-bottom: 16px;
     border-bottom: 2px solid $transparent;
     line-height: 1;
+
+    @media screen and (max-width: 576px) {
+      padding-bottom: 10px;
+    }
 
     &:hover {
       border-color: $primary;

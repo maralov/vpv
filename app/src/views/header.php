@@ -22,7 +22,7 @@
 				<div class="container-fluid px-0">
 					<?php the_custom_logo(); ?>
 
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<div class="collapse navbar-collapse order-1 order-lg-0 mt-3 mt-lg-0" id="navbarSupportedContent">
 
 						<?php
 						wp_nav_menu([
@@ -43,7 +43,7 @@
 					</div>
 					<div class="navbar-action py-2">
 						<a class="btn btn-primary" href="#" role="link">Увійти</a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 					</div>

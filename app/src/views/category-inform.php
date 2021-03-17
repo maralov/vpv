@@ -30,9 +30,9 @@ get_header(); ?>
       ?>
 
       <h1 class="page-title page__title"><?php echo get_cat_name($info_cat_ID); ?></h1>
-      <div class="mb-5 d-flex justify-content-between align-items-center">
+      <div class="mb-3 mb-md-5 d-flex justify-content-between align-items-center flex-wrap flex-lg-nowrap">
 
-        <ul class="page-nav " role="navigation">
+        <ul class="page-nav w-100 mt-4 mt-lg-0 order-1 order-lg-0" role="navigation">
 
           <?php if ($info_sub_cats) : ?>
 
@@ -62,7 +62,7 @@ get_header(); ?>
         <?php
         if (!$is_faq_cat) :
         ?>
-          <div class="page-search">
+          <div class="page-search ms-auto ms-lg-0 mb-4 mb-sm-0">
             <input class="page-search__input" type="text" name="" id="" placeholder="Пошук">
           </div>
 
@@ -70,9 +70,9 @@ get_header(); ?>
 
       <section class="page-content">
 
-        <div class="page-content__header d-flex justify-content-between align-items-center">
+        <div class="page-content__header d-flex flex-wrap justify-content-between align-items-center">
 
-          <h2 class="h-2"><?php echo get_cat_name($cat_id); ?></h2>
+          <h2 class="h-2 mb-4 mb-md-0"><?php echo get_cat_name($cat_id); ?></h2>
 
           <div class="sort-block">
             <div class="sort-block__item">Сортувати за:</div>
@@ -120,7 +120,13 @@ get_header(); ?>
                     </a>
                     <div class="info-card__footer d-flex">
                       <?php if (!empty(get_the_tags())) : ?>
-                        <div class="me-4 txt-muted tags"><?php the_tags(''); ?></div>
+                        <div class="me-4 txt-muted tags">
+                          <?php $posttags = get_the_tags();
+                          if ($posttags) {
+                            foreach ($posttags as $tag) {
+                              echo $tag->name . ' ';
+                            }
+                          } ?></div>
                       <?php endif; ?>
 
                       <?php the_date('d.m.Y'); ?>

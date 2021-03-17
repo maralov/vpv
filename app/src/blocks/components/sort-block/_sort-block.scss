@@ -1,6 +1,9 @@
 .sort-block {
   display: inline-flex;
-  // .sort-block__item
+
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
 
   &__item {
     color: $mute;
@@ -10,7 +13,8 @@
     }
   }
 
-  // .sort-block__action
+  // .sort-block__item
+
 
   &__action {
     cursor: pointer;
@@ -19,4 +23,6 @@
       color: $dark;
     }
   }
+
+  // .sort-block__action
 }

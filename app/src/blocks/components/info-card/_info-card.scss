@@ -3,6 +3,10 @@
   max-width: 1100px;
   text-decoration: none;
 
+  @media screen and (max-width: 576px) {
+    display: block;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -13,6 +17,16 @@
     height: 200px;
     flex-shrink: 0;
 
+    @media screen and (max-width: 768px) {
+      width: 200px;
+    }
+
+    @media screen and (max-width: 576px) {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-bottom: 20px;
+    }
+
     img {
       object-fit: cover;
       width: 100%;
@@ -22,6 +36,15 @@
 
   &__body {
     padding-left: 40px;
+
+    @media screen and (max-width: 768px) {
+      padding-left: 20px;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding-left: 0px;
+    }
+
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -34,6 +57,10 @@
   }
 
   &__footer {
-    margin-top: auto
+    margin-top: auto;
+
+    @media screen and (max-width: 576px) {
+      margin-top: 20px;
+    }
   }
 }

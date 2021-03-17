@@ -3,8 +3,6 @@
   padding-bottom: 7px;
   box-shadow: 0px 2px 6px $shadow-color;
   width: 100%;
-
-
 }
 
 .fixed-header {
@@ -21,13 +19,22 @@
 }
 
 .navbar-nav {
+
+  @include media-breakpoint-down(lg) {
+    text-align: center;
+  }
+
   li {
-    border-bottom: 2px solid $transparent;
     margin-right: 50px;
 
-    &:hover {
-      border-color: $primary;
+    @include media-breakpoint-down(lg) {
+      margin: 0 0 20px;
+    }
 
+    &:hover {
+      a {
+        border-color: $primary;
+      }
     }
 
     a {
@@ -37,13 +44,16 @@
       text-decoration: none;
       display: inline-block;
       padding: 4px 0;
+      border-bottom: 2px solid $transparent;
     }
 
     &.current-menu-item,
-    &.current_page_item {
-      border-color: $primary;
+    &.current_page_item,
+    &.current-menu-parent,
+    &.current-category-ancestor {
 
       a {
+        border-color: $primary;
         font-weight: 500;
       }
     }

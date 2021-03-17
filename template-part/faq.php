@@ -3,17 +3,14 @@ $queried_object = get_queried_object();
 $cat_id = $queried_object->term_id;
 ?>
 
-<div class="page-search">
-  <input class="page-search__input" type="text" name="" id="faqSearch" placeholder="Пошук">
-</div>
 
 </div>
 
 <section class="page-content faq-content">
 
-  <div class="page-content__header d-flexalign-items-center">
+  <div class="page-content__header d-flex align-items-center">
 
-    <h2 class="h-2"><?php echo get_cat_name($cat_id); ?></h2>
+    <h2 class="h-2 mb-4 mb-md-0"><?php echo get_cat_name($cat_id); ?></h2>
 
   </div>
   <!-- ./page-content__header -->

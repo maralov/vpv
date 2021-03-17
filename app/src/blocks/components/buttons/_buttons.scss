@@ -18,5 +18,51 @@ $btn-padding-x: 38px;
     letter-spacing: .5px;
   }
 
+  @include media-breakpoint-down(sm) {
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
   //.btn-primary
+}
+
+.btn-header-mob {
+
+  @include media-breakpoint-down(sm) {
+    font-size: 0;
+    padding: 12px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &--sigin {
+
+    &:after {
+      width: 16px;
+      height: 16px;
+      background: url('../img/icons/ic-signin.svg') no-repeat center / 16px 16px;
+    }
+
+  }
+
+  &--toggle {
+
+    &:after {
+      width: 16px;
+      height: 16px;
+      background: url('../img/icons/ic-toggle.svg') no-repeat center / 16px 12px;
+    }
+  }
 }

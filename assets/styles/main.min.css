@@ -2526,6 +2526,18 @@ fieldset:disabled .btn {
   letter-spacing: .5px;
 }
 
+.btn-header-mob--sigin:after {
+  width: 16px;
+  height: 16px;
+  background: url("../img/icons/ic-signin.svg") no-repeat center/16px 16px;
+}
+
+.btn-header-mob--toggle:after {
+  width: 16px;
+  height: 16px;
+  background: url("../img/icons/ic-toggle.svg") no-repeat center/16px 12px;
+}
+
 .page-nav-item {
   display: inline-block;
   flex-shrink: 0;
@@ -2977,7 +2989,7 @@ fieldset:disabled .btn {
   margin-top: -1px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 800px) {
   .container,
   .container-sm {
     max-width: 548px;
@@ -3829,7 +3841,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .container,
   .container-sm,
   .container-md {
@@ -7268,14 +7280,6 @@ fieldset:disabled .btn {
 }
 
 @media (max-width: 1024.98px) {
-  .navbar-nav {
-    text-align: center;
-  }
-
-  .navbar-nav li {
-    margin: 0 0 20px;
-  }
-
   .table-responsive-lg {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -7287,6 +7291,60 @@ fieldset:disabled .btn {
   }
 }
 
+@media (max-width: 999.98px) {
+  .main-header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .main-header .custom-logo-link {
+    width: 42px;
+    height: 42px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav li {
+    margin: 0 0 20px;
+  }
+
+  .table-responsive-md {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 799.98px) {
+  .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-header-mob {
+    font-size: 0;
+    padding: 12px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .btn-header-mob:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .table-responsive-sm {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .info-card__img {
     width: 200px;
@@ -7294,13 +7352,6 @@ fieldset:disabled .btn {
 
   .info-card__body {
     padding-left: 20px;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .table-responsive-md {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -7368,13 +7419,6 @@ fieldset:disabled .btn {
 
   .info-card__footer {
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .table-responsive-sm {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 }
 

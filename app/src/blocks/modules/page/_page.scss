@@ -5,9 +5,8 @@ $content-gap-y: 32px;
   padding-top: 24px;
   padding-bottom: 60px;
 
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 800px) {
     padding-bottom: 40px;
-
   }
 
   &-title {
@@ -16,6 +15,11 @@ $content-gap-y: 32px;
     font-size: 32px;
     line-height: 38px;
     color: $dark;
+
+    @include media-breakpoint-down(md) {
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
 
   //.page-title
@@ -26,11 +30,10 @@ $content-gap-y: 32px;
     border-radius: 6px;
     border: $border;
 
-    @media screen and (max-width: 576px) {
+    @include media-breakpoint-down(sm) {
       width: 100vw;
       margin-left: calc(-50vw + 50%);
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 34px 16px 48px;
       border-radius: 0px;
     }
 
@@ -78,10 +81,9 @@ $content-gap-y: 32px;
     border-radius: 100px;
     padding: 12px 24px 12px 48px;
 
-    @media screen and (max-width: 576px) {
-      width: 100%;
+    @include media-breakpoint-down(lg) {
+      display: none;
     }
-
 
     &:before {
       content: '';
@@ -99,15 +101,82 @@ $content-gap-y: 32px;
       border: none;
       width: 100%;
       font-size: 16px;
-      border-radius: 100px;
       background-color: transparent;
+      color: $mute;
+
+      &::placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: $mute;
+        text-overflow: ellipsis;
+        opacity: 1;
+        line-height: 30px;
+        transition: all 0.3s ease;
+      }
 
       &:focus {
         outline: rgba(#E5E5EF, .1);
+
+        &::placeholder {
+          opacity: 0;
+        }
       }
     }
   }
 
   //.page-search
 
+
+  &-filter {
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 99%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+
+      }
+    }
+
+
+    &-tag {
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      padding: 12px 32px;
+      background: #E5E5EF;
+      border-radius: 100px;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+
+      @include media-breakpoint-down(bd) {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+
+      &.active,
+      &:hover {
+        background: $secondary;
+      }
+
+      &-sm {
+        padding: 8px 20px;
+        font-size: 12px;
+      }
+    }
+  }
 }

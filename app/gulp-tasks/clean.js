@@ -4,5 +4,5 @@ import gulp from "gulp";
 import del from "del";
 
 gulp.task("clean", () => {
-    return del(["../assets/**/*", "../*.php"], { force: true });
+    return del(["../assets/", "../*.php"], { force: true });
 });

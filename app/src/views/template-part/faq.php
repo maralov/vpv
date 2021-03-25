@@ -10,7 +10,7 @@ $cat_id = $queried_object->term_id;
 
   <div class="page-content__header d-flex align-items-center">
 
-    <h2 class="h-2 mb-4 mb-md-0"><?php echo get_cat_name($cat_id); ?></h2>
+    <h2 class="h-2"><?php echo get_cat_name($cat_id); ?></h2>
 
   </div>
   <!-- ./page-content__header -->
@@ -21,7 +21,7 @@ $cat_id = $queried_object->term_id;
 
       <div class="row faq-content__row">
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4 mb-md-0">
           <div class="h-3 txt-muted faq-cat-title"><?php the_sub_field('faq_block_name'); ?></div>
         </div>
         <div class="col-md-8">

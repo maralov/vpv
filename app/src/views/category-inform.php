@@ -32,7 +32,7 @@ get_header(); ?>
       <h1 class="page-title page__title"><?php echo get_cat_name($info_cat_ID); ?></h1>
       <div class="mb-3 mb-md-5 d-flex justify-content-between align-items-center flex-wrap flex-lg-nowrap">
 
-        <ul class="page-nav w-100 mt-4 mt-lg-0 order-1 order-lg-0" role="navigation">
+        <ul id="pageNavMenu" class="page-nav w-100 mt-4 mt-lg-0" role="navigation">
 
           <?php if ($info_sub_cats) : ?>
 
@@ -72,7 +72,7 @@ get_header(); ?>
 
         <div class="page-content__header d-flex flex-wrap justify-content-between align-items-center">
 
-          <h2 class="h-2 mb-4 mb-md-0"><?php echo get_cat_name($cat_id); ?></h2>
+          <h2 class="h-2 mb-3 mb-sm-0"><?php echo get_cat_name($cat_id); ?></h2>
 
           <div class="sort-block">
             <div class="sort-block__item">Сортувати за:</div>
@@ -92,7 +92,7 @@ get_header(); ?>
           $query = new WP_Query($args);
           // Цикл
           if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-              <div class="col-12 pb-4 border-bottom mb-4">
+              <div class="col-12 border-bottom mb-5 mb-md-4 pb-5 pb-md-4">
                 <div class="info-card">
                   <a href="<?php echo get_permalink() ?>">
                     <div class="info-card__img">
@@ -139,7 +139,7 @@ get_header(); ?>
             endwhile;
           endif; ?>
 
-          <div class="col-12 mt-4 d-flex justify-content-center">
+          <div class="col-12 d-flex justify-content-center">
             <button type="button" class="btn btn-outline-primary">Показати ще</button>
           </div>
         </div>

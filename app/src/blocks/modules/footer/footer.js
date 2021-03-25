@@ -1,15 +1,21 @@
 import $ from 'jquery'
 
 jQuery(function ($) {
-  const $accordionHeader = $(".menu-item > a:not([href])")
+  $(window).on('load resize', function () {
+    if ($(window).width() < 768) {
 
-  $accordionHeader.not(":first").siblings('.sub-menu').hide()
+      const $accordionHeader = $(".menu-item > a:not([href])")
 
-  $accordionHeader.first().addClass("is-active");
+      $accordionHeader.not(":first").siblings('.sub-menu').hide()
 
-  $accordionHeader.on('click', function (e) {
-    e.preventDefault();
-    $(this).toggleClass('is-active').siblings('.sub-menu').slideToggle()
+      $accordionHeader.first().addClass("is-active");
+
+      $accordionHeader.on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('is-active').siblings('.sub-menu').slideToggle()
+      })
+
+    }
   })
 
 });

@@ -8,7 +8,11 @@
     font-size: 18px;
     padding-bottom: 40px;
     margin-bottom: 20px;
-    border-bottom: 1px solid $dark;
+
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 40px;
+    }
 
     strong {
       font-weight: 700;
@@ -56,6 +60,8 @@
     }
   }
 
+  // .post-content
+
   .wp-block-embed {
 
     &__wrapper {
@@ -75,6 +81,13 @@
   }
 
   &-share {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      justify-content: space-between;
+    }
 
     &-item {
       display: inline-block;
@@ -93,4 +106,88 @@
   }
 
   //.post-share
+
+  &-info {
+    padding: 100px 0;
+    background-color: rgba(231, 238, 228, 0.6);
+
+    @media screen and (max-width: 1025px) {
+      padding: 60px 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 40px 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-list {
+
+      &__item {
+        display: flex;
+        align-items: center;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 19px;
+          height: 19px;
+          margin-right: 12px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        &--cat {
+          &:before {
+            background-image: url('../img/icons/ic-post-cat.svg');
+          }
+        }
+
+        &--time {
+          &:before {
+            background-image: url('../img/icons/ic-post-time.svg');
+          }
+        }
+
+        &--count {
+          &:before {
+            background-image: url('../img/icons/ic-post-count.svg');
+          }
+        }
+      }
+    }
+
+    //.post-info-list
+  }
+
+  //.post-info
+
+  &-letcure {
+    padding: 90px 0;
+
+    @include media-breakpoint-down(md) {
+      padding: 40px 0;
+    }
+  }
+
+  //.post-letcure
+}
+
+.lecture-disabled {
+  opacity: .2;
+
+  a {
+    pointer-events: none;
+  }
+
+  .btn {
+    cursor: not-allowed;
+  }
 }

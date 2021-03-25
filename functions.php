@@ -378,3 +378,11 @@ function facebook_open_graph()
 add_action('wp_head', 'facebook_open_graph');
 
 add_action('wp_head', 'kama_postviews');
+
+
+$post = $wp_query->post;
+if (in_category('14')) { //ID категории
+	include(TEMPLATEPATH . '/single-monitors.php');
+} else {
+	include(TEMPLATEPATH . '/single-default.php');
+}

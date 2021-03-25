@@ -18,7 +18,15 @@
       font-weight: 100;
       font-size: 15px;
       vertical-align: middle;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 12px;
+      }
     }
+  }
+
+  th {
+    word-break: initial;
   }
 }
 

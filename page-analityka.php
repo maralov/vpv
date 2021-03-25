@@ -16,7 +16,7 @@ get_header(); ?>
 
       <div class="page-content">
 
-        <div class="page-content__header page-content__header--fw border-bottom">
+        <div class="page-content__header border-bottom">
 
           <ul id="tabsNav" class="page-nav " role="navigation">
             <li class="page-nav-item is-current">
@@ -40,35 +40,35 @@ get_header(); ?>
               <h2 class="h-3 mb-5">Основні показники Полтавської області</h2>
 
               <div class="row justify-content-between flex-lg-nowrap">
-                <div class="col-auto">
+                <div class="col-sm-auto mb-4 md-sm-0">
                   <p class="txt-muted text-uppercase ">
                     населення
                   </p>
                   <p class="total-value-count js-population">
                   </p>
                 </div>
-                <div class="col-auto">
+                <div class="col-sm-auto mb-4 md-sm-0">
                   <p class="txt-muted text-uppercase ">
                     НАСЕЛЕНИХ ПУНКТІВ
                   </p>
                   <p class="total-value-count js-locality">
                   </p>
                 </div>
-                <div class="col-auto">
+                <div class="col-sm-auto mb-4 md-sm-0">
                   <p class="txt-muted text-uppercase">
                     ОТГ
                   </p>
                   <p class="total-value-count  js-otg">
                   </p>
                 </div>
-                <div class="col-auto">
+                <div class="col-sm-auto mb-4 md-sm-0">
                   <p class="txt-muted text-uppercase">
                     пунктів прийому
                   </p>
                   <p class="total-value-count  js-point">
                   </p>
                 </div>
-                <div class="col-auto">
+                <div class="col-sm-auto">
                   <p class="txt-muted text-uppercase">
                     ЗВАЛИЩ
                   </p>
@@ -81,44 +81,45 @@ get_header(); ?>
             <?php if (have_rows('poltava_trash_volume_td')) : ?>
               <section class="report-content__item">
                 <h2 class="h-3 mb-4"><?php the_field('poltava_trash_volume_table_name'); ?></h2>
-                <table class="table table-striped-rows">
-                  <thead>
-                    <tr>
-                      <th scope="col">Район</th>
-                      <th scope="col">Населення</th>
-                      <th scope="col">Пунктів прийому</th>
-                      <th scope="col">Об'єм</th>
-                      <th scope="col">Звалищ</th>
-                      <th scope="col">Населених пунктів</th>
-                      <th scope="col" class="d-none">отг</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-
-                    <?php while (have_rows('poltava_trash_volume_td')) : the_row();
-                      $district = get_sub_field('district');
-                      $population = get_sub_field('population');
-                      $point = get_sub_field('point');
-                      $dump = get_sub_field('dump');
-                      $value = get_sub_field('value');
-                      $locality = get_sub_field('locality');
-                      $otg = get_sub_field('otg');
-                    ?>
+                <div class="table-responsive">
+                  <table class="table table-striped-rows">
+                    <thead>
                       <tr>
-                        <td class="js-district"><?php echo $district ?></td>
-                        <td class="js-population-summ"><?php echo $population ?></td>
-                        <td class="js-point-summ"><?php echo $point ?></td>
-                        <td class="js-dump-summ"><?php echo $dump ?></td>
-                        <td class="js-value-summ"><?php echo $value ?></td>
-                        <td class="js-locality-summ"><?php echo $locality ?></td>
-                        <td class="d-none js-otg-summ"><?php echo $otg ?></td>
+                        <th scope="col">Район</th>
+                        <th scope="col">Населення</th>
+                        <th scope="col">Пунктів прийому</th>
+                        <th scope="col">Об'єм</th>
+                        <th scope="col">Звалищ</th>
+                        <th scope="col">Населених пунктів</th>
+                        <th scope="col" class="d-none">отг</th>
                       </tr>
-                    <?php endwhile; ?>
+                    </thead>
+                    <tbody>
+
+                      <?php while (have_rows('poltava_trash_volume_td')) : the_row();
+                        $district = get_sub_field('district');
+                        $population = get_sub_field('population');
+                        $point = get_sub_field('point');
+                        $dump = get_sub_field('dump');
+                        $value = get_sub_field('value');
+                        $locality = get_sub_field('locality');
+                        $otg = get_sub_field('otg');
+                      ?>
+                        <tr>
+                          <td class="js-district txt-no-break "><?php echo $district ?></td>
+                          <td class="js-population-summ"><?php echo $population ?></td>
+                          <td class="js-point-summ"><?php echo $point ?></td>
+                          <td class="js-dump-summ"><?php echo $dump ?></td>
+                          <td class="js-value-summ"><?php echo $value ?></td>
+                          <td class="js-locality-summ"><?php echo $locality ?></td>
+                          <td class="d-none js-otg-summ"><?php echo $otg ?></td>
+                        </tr>
+                      <?php endwhile; ?>
 
 
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
+                </div>
               </section>
               <!-- report-content__item -->
             <?php endif; ?>
@@ -127,34 +128,36 @@ get_header(); ?>
             <?php if (true) : ?>
               <section class="report-content__item">
                 <h2 class="h-3 mb-4"><?php the_field('poltava_stage_table_name'); ?></h2>
-                <table class="table table-border-rows">
-                  <thead>
-                    <tr>
-                      <th scope="col">Район</th>
-                      <th scope="col">Стадія 1</th>
-                      <th scope="col">Стадія 2</th>
-                      <th scope="col">Стадія 3</th>
-                      <th scope="col">Стадія 4</th>
-                      <th scope="col">Стадія 5</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <?php while (have_rows('poltava_stage_td')) : the_row();
-                      $value = get_sub_field('value');
-                    ?>
+                <div class="table-responsive">
+                  <table class="table table-border-rows">
+                    <thead>
                       <tr>
-                        <td><?php the_sub_field('district'); ?></td>
-                        <td colspan="5">
-                          <div class="progress" style="height: 32px;">
-                            <div class="progress-bar" role="progressbar" style="width: <?php echo $value . '%' ?>;" aria-valuenow="<?php echo $value ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $value . '%' ?></div>
-                          </div>
-                        </td>
-
+                        <th scope="col">Район</th>
+                        <th scope="col"><span class='d-none d-sm-inline'>Стадія</span> 1</th>
+                        <th scope="col"><span class='d-none d-sm-inline'>Стадія</span> 2</th>
+                        <th scope="col"><span class='d-none d-sm-inline'>Стадія</span> 3</th>
+                        <th scope="col"><span class='d-none d-sm-inline'>Стадія</span> 4</th>
+                        <th scope="col"><span class='d-none d-sm-inline'>Стадія</span> 5</th>
                       </tr>
-                    <?php endwhile; ?>
-                  </tbody>
-                </table>
+                    </thead>
+
+                    <tbody>
+                      <?php while (have_rows('poltava_stage_td')) : the_row();
+                        $value = get_sub_field('value');
+                      ?>
+                        <tr>
+                          <td><?php the_sub_field('district'); ?></td>
+                          <td colspan="5">
+                            <div class="progress" style="height: 32px;">
+                              <div class="progress-bar" role="progressbar" style="width: <?php echo $value . '%' ?>;" aria-valuenow="<?php echo $value ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $value . '%' ?></div>
+                            </div>
+                          </td>
+
+                        </tr>
+                      <?php endwhile; ?>
+                    </tbody>
+                  </table>
+                </div>
               </section>
               <!-- report-content__item -->
 

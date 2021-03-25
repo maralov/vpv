@@ -13,8 +13,6 @@
 
 - установите [NodeJS](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install)
 - скачайте сборку с помощью [Git](https://git-scm.com/downloads): `git clone `
-- установите `gulp` глобально: `yarn global add gulp-cli`
-- установите `bem-tools-core` глобально: `yarn global add bem-tools-core`
 - перейдите в скачанную папку со сборкой: `cd app`
 - скачайте необходимые зависимости: `yarn`
 - чтобы начать работу, введите команду: `yarn run dev` (режим разработки)

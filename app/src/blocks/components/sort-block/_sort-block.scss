@@ -1,12 +1,21 @@
 .sort-block {
   display: inline-flex;
 
-  @media screen and (max-width: 576px) {
-    display: none;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
     color: $mute;
+
+    @media screen and (max-width: 600px) {
+      &:first-child {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+    }
+
 
     &:not(:last-child) {
       margin-right: 40px;

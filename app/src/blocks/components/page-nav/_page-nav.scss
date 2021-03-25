@@ -1,5 +1,5 @@
 .page-nav {
-  @media screen and (max-width: 576px) {
+  @include media-breakpoint-down(sm) {
     display: flex;
     overflow-x: auto;
     padding-bottom: 10px;
@@ -14,7 +14,7 @@
     &:not(:last-child) {
       margin-right: 40px;
 
-      @media screen and (max-width: 576px) {
+      @include media-breakpoint-down(sm) {
         margin-right: 20px;
       }
     }
@@ -38,7 +38,7 @@
     border-bottom: 2px solid $transparent;
     line-height: 1;
 
-    @media screen and (max-width: 576px) {
+    @include media-breakpoint-down(sm) {
       padding-bottom: 10px;
     }
 

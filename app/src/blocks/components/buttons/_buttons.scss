@@ -18,7 +18,13 @@ $btn-padding-x: 38px;
     letter-spacing: .5px;
   }
 
-  @include media-breakpoint-down(sm) {
+
+  &-dark {
+    background-color: $dark;
+    border-color: $dark;
+  }
+
+  @include media-breakpoint-down(lg) {
     &:focus {
       outline: none;
       box-shadow: none;
@@ -30,7 +36,7 @@ $btn-padding-x: 38px;
 
 .btn-header-mob {
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(lg) {
     font-size: 0;
     padding: 12px;
     border-radius: 50%;
@@ -48,21 +54,26 @@ $btn-padding-x: 38px;
   }
 
   &--sigin {
-
-    &:after {
-      width: 16px;
-      height: 16px;
-      background: url('../img/icons/ic-signin.svg') no-repeat center / 16px 16px;
+    @include media-breakpoint-down(lg) {
+      &:after {
+        width: 16px;
+        height: 16px;
+        background: url('../img/icons/ic-signin.svg') no-repeat center / 16px 16px;
+      }
     }
-
   }
 
   &--toggle {
+    display: none;
 
-    &:after {
-      width: 16px;
-      height: 16px;
-      background: url('../img/icons/ic-toggle.svg') no-repeat center / 16px 12px;
+    @include media-breakpoint-down(lg) {
+      display: inline-block;
+
+      &:after {
+        width: 16px;
+        height: 16px;
+        background: url('../img/icons/ic-toggle.svg') no-repeat center / 16px 12px;
+      }
     }
   }
 }

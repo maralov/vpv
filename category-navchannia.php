@@ -21,88 +21,156 @@ get_header(); ?>
       }
       ?>
 
-      <div class="mb-5 d-flex justify-content-between align-items-center">
-        <h1 class="page-title"><?php echo get_cat_name($cat_id); ?></h1>
-
-        <div class="sort-block">
-          <div class="sort-block__item">Сортувати за:</div>
-          <div class="sort-block__item sort-block__action">Назвою (А-Я)</div>
-          <div class="sort-block__item sort-block__action">Нові</div>
-          <div class="sort-block__item sort-block__action">Популярні</div>
+      <div class=" row justify-content-between align-items-center">
+        <div class="col-md-3 mb-4">
+          <h1 class="page-title"><?php echo get_cat_name($cat_id); ?></h1>
+        </div>
+        <div class="col-md-9 mb-4 order-1 order-md-0 d-md-flex justify-content-end">
+          <div class="sort-block">
+            <div class="sort-block__item">Сортувати за:</div>
+            <div class="sort-block__item sort-block__action">Назвою (А-Я)</div>
+            <div class="sort-block__item sort-block__action">Нові</div>
+            <div class="sort-block__item sort-block__action">Популярні</div>
+          </div>
+        </div>
+        <div class="col-md-12 mb-4">
+          <div class="page-filter">
+            <a href="#" class="page-filter__item page-filter-tag active">Усі</a>
+            <a href="#" class="page-filter__item page-filter-tag">Для населення</a>
+            <a href="#" class="page-filter__item page-filter-tag">Для працівників</a>
+            <a href="#" class="page-filter__item page-filter-tag">Для садочків/шкіл</a>
+            <a href="#" class="page-filter__item page-filter-tag">Для держслужбовців</a>
+          </div>
         </div>
       </div>
 
-      <section class="page-content">
+      <div class="row">
 
-        <div class="page-content__header d-flex justify-content-between align-items-center">
-
-          <h2 class="h-2"><?php echo get_cat_name($cat_id); ?></h2>
-
-
-
-        </div>
-        <!-- ./page-content__header -->
-        <div class="row">
-          <?php $args = array(
-            // 'posts_per_page' => 50,
-            'cat' => $cat_id
-          );
-
-          $query = new WP_Query($args);
-          // Цикл
-          if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-              <div class="col-12 pb-4 border-bottom mb-4">
-                <div class="info-card">
-                  <a href="<?php echo get_permalink() ?>">
-                    <div class="info-card__img">
-                      <?php
-                      $post_preview_img = get_field('post_preview_img');
-                      echo kama_thumb_img(array(
-                        'src' => $post_preview_img,
-                        'w' => 420,
-                        'h' => 200,
-                        'alt' => get_the_title(),
-                      )); ?>
-
-                    </div>
-                  </a>
-                  <div class="info-card__body">
-                    <a href="<?php echo get_permalink() ?>">
-                      <h4 class="info-card__title">
-                        <?php the_title(); ?>
-                      </h4>
-                      <div>
-                        <?php
-                        $excerpt_text = wp_strip_all_tags(get_the_content());
-                        echo kama_excerpt(array('maxchar' => 145, 'text' => $excerpt_text)); ?>
-                      </div>
-                    </a>
-                    <div class="info-card__footer d-flex">
-                      <?php if (!empty(get_the_tags())) : ?>
-                        <div class="me-4 txt-muted tags"><?php the_tags(''); ?></div>
-                      <?php endif; ?>
-
-                      <?php the_date('d.m.Y'); ?>
-                    </div>
-                  </div>
-
-                </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <article class="card bg-light">
+            <div class="card__img img-responsive">
+              <img src="<?php the_field('post_preview_img', 161) ?>" alt="">
+            </div>
+            <div class="card__body">
+              <div class="card__tags"><span class="page-filter-tag page-filter-tag-sm">Для держслужбовців</span></div>
+              <h3 class="card__title text-uppercase h-3"><?php echo get_the_title(161) ?></h3>
+              <div class="card__txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id ac metus porttitor sed enim tellus
+                  gravida.
+                </p>
               </div>
-          <?php wp_reset_query();
-            endwhile;
-          endif; ?>
-
-          <div class="col-12 mt-4 d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-primary">Показати ще</button>
-          </div>
+              <div class="card__action">
+                <a href="<?php echo get_the_permalink(161) ?>" class="btn bg-primary btn-outline-primary"> Розпочати </a>
+              </div>
+            </div>
+          </article>
         </div>
-
-      </section>
-
-      <!-- page-content -->
+        <div class="col-sm-6 col-md-4 mb-4">
+          <article class="card bg-light">
+            <div class="card__img img-responsive">
+              <img src="<?php the_field('post_preview_img', 161) ?>" alt="">
+            </div>
+            <div class="card__body">
+              <div class="card__tags"><span class="page-filter-tag page-filter-tag-sm">Для держслужбовців</span></div>
+              <h3 class="card__title text-uppercase h-3"><?php echo get_the_title(161) ?></h3>
+              <div class="card__txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id ac metus porttitor sed enim tellus
+                  gravida.
+                </p>
+              </div>
+              <div class="card__action">
+                <a href="<?php echo get_the_permalink(161) ?>" class="btn bg-primary btn-outline-primary"> Розпочати </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <article class="card bg-light">
+            <div class="card__img img-responsive">
+              <img src="<?php the_field('post_preview_img', 161) ?>" alt="">
+            </div>
+            <div class="card__body">
+              <div class="card__tags"><span class="page-filter-tag page-filter-tag-sm">Для держслужбовців</span></div>
+              <h3 class="card__title text-uppercase h-3"><?php echo get_the_title(161) ?></h3>
+              <div class="card__txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id ac metus porttitor sed enim tellus
+                  gravida.
+                </p>
+              </div>
+              <div class="card__action">
+                <a href="<?php echo get_the_permalink(161) ?>" class="btn bg-primary btn-outline-primary"> Розпочати </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <article class="card bg-light">
+            <div class="card__img img-responsive">
+              <img src="<?php the_field('post_preview_img', 161) ?>" alt="">
+            </div>
+            <div class="card__body">
+              <div class="card__tags"><span class="page-filter-tag page-filter-tag-sm">Для держслужбовців</span></div>
+              <h3 class="card__title text-uppercase h-3"><?php echo get_the_title(161) ?></h3>
+              <div class="card__txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id ac metus porttitor sed enim tellus
+                  gravida.
+                </p>
+              </div>
+              <div class="card__action">
+                <a href="<?php echo get_the_permalink(161) ?>" class="btn bg-primary btn-outline-primary"> Розпочати </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <article class="card bg-light">
+            <div class="card__img img-responsive">
+              <img src="<?php the_field('post_preview_img', 161) ?>" alt="">
+            </div>
+            <div class="card__body">
+              <div class="card__tags"><span class="page-filter-tag page-filter-tag-sm">Для держслужбовців</span></div>
+              <h3 class="card__title text-uppercase h-3"><?php echo get_the_title(161) ?></h3>
+              <div class="card__txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id ac metus porttitor sed enim tellus
+                  gravida.
+                </p>
+              </div>
+              <div class="card__action">
+                <a href="<?php echo get_the_permalink(161) ?>" class="btn bg-primary btn-outline-primary"> Розпочати </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <article class="card bg-light">
+            <div class="card__img img-responsive">
+              <img src="<?php the_field('post_preview_img', 161) ?>" alt="">
+            </div>
+            <div class="card__body">
+              <div class="card__tags"><span class="page-filter-tag page-filter-tag-sm">Для держслужбовців</span></div>
+              <h3 class="card__title text-uppercase h-3"><?php echo get_the_title(161) ?></h3>
+              <div class="card__txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id ac metus porttitor sed enim tellus
+                  gravida.
+                </p>
+              </div>
+              <div class="card__action">
+                <a href="<?php echo get_the_permalink(161) ?>" class="btn bg-primary btn-outline-primary"> Розпочати </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- ./col-md-4 -->
+        <div class="col-12 mt-4 d-flex justify-content-center">
+          <button type="button" class="btn btn-outline-primary">Показати ще</button>
+        </div>
+        <!-- ./col-12 mt-4 -->
+      </div>
+      <!-- ./row -->
     </div>
+    <!-- ./container -->
   </div>
-
+  <!-- ./page -->
 </main>
 
 <?php get_footer(); ?>

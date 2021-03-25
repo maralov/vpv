@@ -4,14 +4,13 @@ sans-serif;
 $root-font-size: 16px;
 
 $grid-breakpoints: (xs: 0,
-  sm: 800px,
-  md: 1000px,
-  lg: 1025px,
+  sm: 600px,
+  md: 800px,
+  lg: 1024.99px,
   xl: 1300px,
   xxl: 1440px);
 
-$container-max-widths: (sm: 548px,
-  md: 980px,
+$container-max-widths: (md: 980px,
   lg: 1184px,
   xl: 1264px,
   xxl: 1352px);

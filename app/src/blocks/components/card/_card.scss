@@ -1,0 +1,52 @@
+.card {
+  border: 1px solid #F0F0F0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  overflow: hidden;
+
+  &__body {
+    padding: 32px 24px;
+
+    @media screen and (max-width: 1400px) {
+      padding: 20px;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 1400px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+
+    @media screen and (max-width: 1400px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__txt {
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 1400px) {
+      margin-bottom: 18px;
+    }
+
+    color: rgba(0, 0, 0, 0.67);
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &--border-radius-none {
+    border-radius: 0px;
+  }
+
+  &--border-none {
+    border: none;
+  }
+}

@@ -3,7 +3,7 @@
   max-width: 1100px;
   text-decoration: none;
 
-  @media screen and (max-width: 576px) {
+  @include media-breakpoint-down(md) {
     display: block;
   }
 
@@ -17,14 +17,13 @@
     height: 200px;
     flex-shrink: 0;
 
-    @media screen and (max-width: 768px) {
-      width: 200px;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      margin-bottom: 16px;
     }
 
-    @media screen and (max-width: 576px) {
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      margin-bottom: 20px;
+    @include media-breakpoint-down(md) {
+      height: 180px;
     }
 
     img {
@@ -37,11 +36,11 @@
   &__body {
     padding-left: 40px;
 
-    @media screen and (max-width: 768px) {
+    @include media-breakpoint-down(md) {
       padding-left: 20px;
     }
 
-    @media screen and (max-width: 576px) {
+    @include media-breakpoint-down(sm) {
       padding-left: 0px;
     }
 
@@ -59,7 +58,7 @@
   &__footer {
     margin-top: auto;
 
-    @media screen and (max-width: 576px) {
+    @include media-breakpoint-down(sm) {
       margin-top: 20px;
     }
   }

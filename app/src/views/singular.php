@@ -25,16 +25,16 @@
 
         </div>
 
-        <div class="post-content">
+        <div class="post-content border-bottom-secondary">
           <?php the_content(); ?>
         </div>
 
         <div class="d-flex justify-content-between txt-muted">
-          <div>
+          <div class="d-none d-sm-block">
             <?php echo get_the_date('d.m.Y'); ?>
           </div>
 
-          <div class="ms-auto post-share d-flex align-items-center">
+          <div class="ms-auto post-share">
             <span>Поділитись статтею:</span>
             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_post_permalink() ?>" target="_blank" class="post-share-item">
               <img src="<?php echo THEME_ROOT ?>/assets/img/icons/ic-fb.svg" alt="">
